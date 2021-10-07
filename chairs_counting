@@ -1,4 +1,6 @@
 import re
+import os
+import argparse
 
 def load_map(file):
   ''' This function rewrites the text file to split the line more easily'''
@@ -132,3 +134,35 @@ def print_result(total, results,filename, output):
     print(line)
 
 
+if __name__ == '__main__':
+    description = 'Pick a file for counting chair or let the script find it:'
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument("--d",
+                        '--dir', 
+                        default="",
+                        required=False,
+                        help='location of the map file')
+    parser.add_argument('--o',
+                        '--out',
+                        type=str,
+                        default="",
+                        required=False,
+                        help='location of the output file')
+    args, unknown = parser.parse_known_args()
+    filename=args.d
+    if filename=="":
+      path=os.getcwd()
+      filelist=[x for x in os.listdir(path) if os.path.isfile(path+"/"+x) and x.split(".")[-1]=="txt"]
+      print("path:",path,"filelist:", filelist)
+      output=args.o
+      for filename in filelist:
+            linelist=load_map(filename)
+            results=screening_rooms(linelist)
+            total=build_total(results)
+            print_result(total, results, filename, output)
+            exit()
+    output=args.o
+    linelist=load_map(filename)
+    results=screening_rooms(linelist)
+    total=build_total(results)
+    print_result(total, results, filename, output)

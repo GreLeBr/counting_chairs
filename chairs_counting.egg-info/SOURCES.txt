@@ -1,0 +1,10 @@
+chairs_counting
+chairs_counting.py
+setup.py
+chairs_counting.egg-info/PKG-INFO
+chairs_counting.egg-info/SOURCES.txt
+chairs_counting.egg-info/dependency_links.txt
+chairs_counting.egg-info/not-zip-safe
+chairs_counting.egg-info/top_level.txt
+data/rooms.txt
+data/rooms.txt:Zone.Identifier
