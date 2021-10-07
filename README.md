@@ -25,9 +25,9 @@ Test on other files
 
 2. Create a coordinate system to define different rooms
 
-turning points:
+turning points:   
 +-    +      +
-         I      /
+      I      /
 
 Task:
 Apartment And Chair Delivery Limited has a unique position on the housing market.
@@ -62,12 +62,12 @@ C: china chair
 
 The output must look like this so that it can be read in with the old system:
 
-total:
-W: 3, P: 2, S: 0, C: 0
-living room:
-W: 3, P: 0, S: 0, C: 0
-office:
-W: 0, P: 2, S: 0, C: 0
+total:   
+W: 3, P: 2, S: 0, C: 0   
+living room:   
+W: 3, P: 0, S: 0, C: 0   
+office:   
+W: 0, P: 2, S: 0, C: 0   
 
 
 The names of the rooms must be sorted alphabetically in the output.
