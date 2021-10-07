@@ -15,7 +15,7 @@ def load_map(file):
   return linelist
 
 def build_dict(rooms, results):
-  ''' This function create a dictionary with chair count'''
+  ''' This function creates a dictionary with chair count'''
   for i in range (len(rooms)):
     roomcount={}
     roomcount["W:"]=len([x for x in "".join([x for x in rooms[i]]) if x =="W"])
@@ -32,7 +32,7 @@ def build_dict(rooms, results):
 
 
 def screening_rooms(linelist):
-  ''' This function identify rooms'''
+  ''' This function identifies rooms'''
   room=[]
   rooms=[]
   results={}
@@ -89,7 +89,7 @@ def screening_rooms(linelist):
   return results
 
 def build_total(results):
-  ''' This function calculate the total amount of chairs '''
+  ''' This function calculates the total amount of chairs '''
   total={}
   total_w=[]
   total_p=[]
@@ -107,7 +107,7 @@ def build_total(results):
   return total
 
 def print_result(total, results,filename, output):
-  ''' This function output result file and print formated results '''
+  ''' This function outputs result file and print formated results '''
   if output=="":
     output=filename.split("/")[-1].split(".txt")[0]+"_ouput.txt"
     # output_name=filename.split("/")[-1].split(".txt")[0]+"_ouput.txt"
@@ -130,5 +130,4 @@ def print_result(total, results,filename, output):
         f.write("\n")   
   for line in  open(output):
     print(line)
-
 
